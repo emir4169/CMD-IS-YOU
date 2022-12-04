@@ -16,31 +16,27 @@ def controls(map, player_x):
             map[player_x], map[player_x+1] = 0, "cmd"
             return player_x + 1
         else:
-            print("Cant move player: Text in way. If you know how to fix this please make a pull request.")
+            print("Cant move player: Text in way. If you know how to make the player not eat the text for some reason make a pull request")
             return player_x
     if action.lower() == "s":
         if map[player_x-1] == 0:
             map[player_x], map[player_x-1] = 0, "cmd"
             return player_x - 1
         else:
-            print("Cant move player: Text in way. If you know how to fix this please make a pull request.")
+            print("Cant move player: Text in way. If you know how to make the player not eat the text for some reason make a pull request")
             return player_x
 
 
 level = [
     "cmd", 0, 0, 0, "cmd", "is", "you", 0, 0, 0, 0, 0
 ]
-start_points_level = [
-    "cmd", 0, 0, 0, "cmd", "is", "you", 0, 0, 0, 0, 0
-]
-
 
 
 def clear_stdout():
     if os.name == 'nt': # windows
         os.system('cls')
     else:
-        os.system('clear')
+        os.system('clear') # linux or mac
         
 
 # Print Loop
