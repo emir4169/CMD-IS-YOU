@@ -41,11 +41,15 @@ def clear_stdout():
 
 # Print Loop
 while True:
+    # Print level
     clear_stdout()
-    print("(DEBUG) os.name =" + " " + os.name)
     print(level)
+    # Ask for input
     action = input("Action:")
+    # Update the level
     player_x = controls(level, player_x)
+    # Exit if player wants to exit
     if (action.upper() == "EXIT"):
         break
+    # Tick delay
     time.sleep(0.5)
