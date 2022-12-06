@@ -2,8 +2,7 @@ import os
 import time
 
 
-action = ""
-player_x = int(0)
+action, player_x = "", int(0)
 
 
 def controls(level, player_x):
@@ -30,7 +29,7 @@ level = [
 
 def clear_stdout():
     if os.name == 'nt': # windows
-        os.system('cls')
+        os.system('cls') # please note that if you remove this in a pull request its not gonna get merged no matter what
     else:
         os.system('clear') # linux or mac
         
@@ -39,10 +38,10 @@ def clear_stdout():
 while True:
     # Print level
     clear_stdout()
+    print(f"OS name (include this in issues): %s" % os.name)
     print(level)
-    # Ask for input
+    # Ask for input then update level
     action = input("Action:")
-    # Update the level
     player_x = controls(level, player_x)
     # Exit if player wants to exit
     if (action.upper() == "EXIT"):
