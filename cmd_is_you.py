@@ -1,6 +1,4 @@
-from os import *
 import os
-from time import *
 import time
 
 
