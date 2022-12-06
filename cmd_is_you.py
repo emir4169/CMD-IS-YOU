@@ -8,19 +8,17 @@ action = ""
 player_x = int(0)
 
 
-def controls(map, player_x):
-    player_xmore = player_x+1
-    player_xless = player_x-1
+def controls(level, player_x):
     if action.lower() == "w":
-        if map[player_x+1] == 0:
-            map[player_x], map[player_x+1] = 0, "cmd"
+        if level[player_x+1] == 0:
+            level[player_x], level[player_x+1] = 0, "cmd"
             return player_x + 1
         else:
             print("Cant move player: Text in way. If you know how to make the player not eat the text for some reason make a pull request")
             return player_x
     if action.lower() == "s":
-        if map[player_x-1] == 0:
-            map[player_x], map[player_x-1] = 0, "cmd"
+        if level[player_x-1] == 0:
+            level[player_x], level[player_x-1] = 0, "cmd"
             return player_x - 1
         else:
             print("Cant move player: Text in way. If you know how to make the player not eat the text for some reason make a pull request")
